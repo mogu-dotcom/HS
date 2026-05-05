@@ -1,0 +1,74 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1e2430;
+  --muted: #667085;
+  --primary: #1b4dff;
+  --line: #e4e7ec;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  padding: 2rem;
+}
+.eyebrow { color: var(--primary); margin: 0 0 .5rem; font-weight: 700; }
+h1 { margin: 0 0 .5rem; }
+.subtitle { margin: 0; color: var(--muted); }
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  padding: 0 2rem 2rem;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+.filter-panel label { display:block; margin: .9rem 0 .4rem; font-size: .9rem; }
+select, input {
+  width: 100%;
+  padding: .65rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.ghost {
+  margin-top: .8rem;
+  width: 100%;
+  background: #eef2ff;
+  color: #364152;
+}
+.toolbar { display:flex; justify-content:space-between; align-items:center; }
+.cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: .75rem; }
+.card { border:1px solid var(--line); border-radius: 14px; padding: .9rem; background:#fff; }
+.meta-row { display:flex; justify-content:space-between; color:var(--muted); font-size:.8rem; }
+.category { background:#eef2ff; color:#243b88; border-radius:99px; padding:.2rem .6rem; font-weight:600; }
+.summary { color:#475467; font-size:.92rem; }
+.tags { display:flex; gap:.4rem; flex-wrap:wrap; margin:.7rem 0; }
+.tag { background:#f2f4f7; color:#344054; font-size:.75rem; padding:.22rem .55rem; border-radius:999px; }
+.link { color: var(--primary); text-decoration:none; font-weight:600; }
+.next-step { margin-top: 1rem; border-top:1px dashed var(--line); padding-top: .7rem; }
+.next-step h3 { margin:0 0 .3rem; font-size: .95rem; }
+.next-step ul { margin:0; padding-left:1.1rem; color:var(--muted); font-size:.87rem; }
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+}

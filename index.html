@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>부동산/인프라 리서치 허브 (시안)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Prototype v0.1</p>
+      <h1>부동산·인프라 리서치 허브</h1>
+      <p class="subtitle">카테고리 중심으로 리포트를 모아보고, 사이트는 태그로 구분하는 구조 제안</p>
+    </div>
+    <button id="refreshBtn" class="btn">업데이트 체크(시뮬레이션)</button>
+  </header>
+
+  <main class="layout">
+    <aside class="panel filter-panel">
+      <h2>필터</h2>
+      <label for="category">카테고리</label>
+      <select id="category">
+        <option value="all">전체</option>
+        <option value="office">오피스</option>
+        <option value="logistics">물류</option>
+        <option value="retail">리테일</option>
+        <option value="hotel">호텔</option>
+        <option value="market">시장전망/투자의견</option>
+      </select>
+
+      <label for="source">사이트 태그</label>
+      <select id="source">
+        <option value="all">전체</option>
+        <option value="genstar">젠스타메이트</option>
+        <option value="cbre">CBRE</option>
+        <option value="cw">Cushman & Wakefield</option>
+        <option value="savills">Savills</option>
+      </select>
+
+      <label for="keyword">키워드</label>
+      <input id="keyword" type="text" placeholder="예: cap rate, 임대료" />
+
+      <button id="resetBtn" class="btn ghost">초기화</button>
+
+      <section class="next-step">
+        <h3>실서비스 기능 제안</h3>
+        <ul>
+          <li>RSS/API/크롤러 연동으로 자동 수집</li>
+          <li>주기별 업데이트 캘린더(주간/월간)</li>
+          <li>신규 리포트 알림(메일/슬랙)</li>
+          <li>관심 카테고리 즐겨찾기</li>
+        </ul>
+      </section>
+    </aside>
+
+    <section class="panel content-panel">
+      <div class="toolbar">
+        <h2>리포트 목록</h2>
+        <p id="count"></p>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="meta-row">
+        <span class="category"></span>
+        <span class="date"></span>
+      </div>
+      <h3 class="title"></h3>
+      <p class="summary"></p>
+      <div class="tags"></div>
+      <a class="link" target="_blank" rel="noopener">원문 보기</a>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
